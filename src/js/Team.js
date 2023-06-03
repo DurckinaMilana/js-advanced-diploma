@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Класс, представляющий персонажей команды
  *

@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable linebreak-style */
 import { calcHealthLevel, calcTileType } from '../utils';
 
 test.each([

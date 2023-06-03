@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * @todo
  * @param index - индекс поля

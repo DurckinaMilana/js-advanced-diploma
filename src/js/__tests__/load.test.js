@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import GamePlay from '../GamePlay';
 import GameStateService from '../GameStateService';
 
