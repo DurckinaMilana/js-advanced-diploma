@@ -1,24 +1,24 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'result'),
     filename: 'app.bundle.js',
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$/i,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
       },
       {
-        test: /\.html$/,
+        test: /\.html$/i,
         use: [
           {
             loader: 'html-loader',
@@ -26,23 +26,25 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
-          MiniCssExtractPlugin.loader, 'css-loader',
+          MiniCSSExtractPlugin.loader,
+          'css-loader',
         ],
       },
       {
-        test: /\.png$/,
+        test: /\.(png|jpg|gif)$/i,
         type: 'asset/resource',
       },
     ],
   },
+
   plugins: [
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
     }),
-    new MiniCssExtractPlugin({
+    new MiniCSSExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
